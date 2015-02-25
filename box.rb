@@ -11,50 +11,48 @@ class Box
 	and there have to be setter and getter methods
 	there have to be get_area() method
 =end
-	def initialize(height,width)
+  def initialize(height,width)
     @height=height
     @width=width
   end
-
-  def getWidth
-    @width
+  def get_width()
+    return @width
   end
 
-  def getHeight
-    @height
+  def get_height()
+    return @height
   end
 
-  def setWidth=(w)
+  def set_width=(w)
     @width=w
   end
 
-  def  setHeight=(h)
+  def  set_height=(h)
     @height=h
   end
 
-  def get_area
-    height*width
+  def get_area()
+    return @height*@width
   end
 end
 
 
-class SmallBox < Box
-  def get_area
-    @area=@width*@height
-    puts "The area of SmallBox is: #@area"
-  end
-end
-
-class BigBox < Box
-  def get_area
-    @area=@width*@height
-    puts "The area of BigBox is: #@area"
-  end
-end
 
 
 #TODO SmallBox
-#			override get_area() method
-#TODO BigBox
-#			override get_area() method
+class SmallBox < Box
+  #			override get_area() method
+  def get_area()
+    @area=@width*@height
+    return "Area of small box is equal to: #{@area}"
+  end
+end
 
+#TODO BigBox
+class BigBox < Box
+  #			override get_area() method
+  def get_area()
+    @area=@width*@height
+    return "Area of big box is equal to: #{@area}"
+  end
+end
